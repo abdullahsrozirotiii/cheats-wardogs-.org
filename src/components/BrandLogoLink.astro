@@ -1,0 +1,36 @@
+---
+import { t } from '../i18n';
+
+interface Props {
+  class?: string;
+  imageClass?: string;
+  compact?: boolean;
+  /** Extra anchor words, visually hidden, so header and footer logos are not the same link text. */
+  context?: string;
+}
+
+const { class: className, imageClass, compact = false, context } = Astro.props;
+const logoSize = compact ? 28 : 32;
+---
+
+<a
+  href="/"
+  class:list={['brand-logo-link', className]}
+  aria-label="cheatswardogs.org home"
+>
+  <span class="brand-logo-link__mark" aria-hidden="true">
+    <img
+      src="/logo.png"
+      alt="War Dogs Cheats logo"
+      width={logoSize}
+      height={logoSize}
+      class:list={['brand-logo-link__img', imageClass]}
+      loading="eager"
+      decoding="async"
+    />
+  </span>
+  <span class="brand-logo-link__text font-[family-name:var(--font-heading)] text-lg font-bold tracking-wide" aria-hidden="true">
+    War Dogs<span class="text-primary"> Cheats</span>
+  </span>
+  {context && <span class="sr-only"> {context}</span>}
+</a>

@@ -1,0 +1,128 @@
+---
+import '../styles/product-cheat-page.css';
+import { t } from '../i18n';
+import { catalogPages } from '../data/products';
+import { cheatTierIcons, productCategoryIcons } from '../data/sectionIcons';
+import SectionHeader from './SectionHeader.astro';
+import CatalogCard from './CatalogCard.astro';
+import { productPath } from '../utils/path';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/starwind/carousel';
+
+const s = t.products;
+
+function cardIcon(product: (typeof catalogPages)[number]) {
+  if (product.kind === 'tier') {
+    return cheatTierIcons[product.name] ?? 'crosshair';
+  }
+  return productCategoryIcons[product.category ?? ''] ?? 'package';
+}
+
+function cardLabel(product: (typeof catalogPages)[number]) {
+  if (product.kind === 'tier') {
+    if (product.slug === 'cheats') return 'Cheats';
+    return product.tier ?? product.name;
+  }
+  return product.category ?? 'Utility';
+}
+
+function catalogBuyLabel(product: (typeof catalogPages)[number]) {
+  switch (product.slug) {
+    case 'cheats':
+      return 'Buy cheat tiers';
+    case 'ugc':
+      return 'Buy UGC appeals';
+    case 'hwid-spoofer':
+      return 'Buy HWID spoofer';
+    case 'unlock-all':
+      return 'Buy Skin Changer';
+    default:
+      return `Buy ${product.name}`;
+  }
+}
+
+function catalogViewLabel(product: (typeof catalogPages)[number]) {
+  switch (product.slug) {
+    case 'cheats':
+      return 'Cheat tier details';
+    case 'ugc':
+      return 'UGC appeal details';
+    case 'hwid-spoofer':
+      return 'HWID spoofer details';
+    case 'unlock-all':
+      return 'Skin Changer details';
+    default:
+      return `${product.name} details`;
+  }
+}
+---
+
+<section id="products" class="py-16 md:py-24" aria-labelledby="products-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" />
+
+    <div class="products-carousel" data-products-carousel>
+      <Carousel
+        autoInit
+        opts={{ align: 'start', containScroll: 'trimSnaps', dragFree: false }}
+        class="products-carousel__root"
+      >
+        <div class="products-carousel__stage">
+          <CarouselPrevious class="products-carousel__arrow products-carousel__arrow--prev" hidden />
+          <CarouselNext class="products-carousel__arrow products-carousel__arrow--next is-visible" />
+          <div class="products-carousel__viewport">
+            <CarouselContent class="products-carousel__track">
+              {
+                catalogPages.map((product) => (
+                  <CarouselItem class="products-carousel__slide">
+                    <CatalogCard
+                      class="catalog-card--carousel"
+                      label={cardLabel(product)}
+                      title={product.title}
+                      href={productPath(product.slug)}
+                      buyUrl={product.buyUrl}
+                      features={product.features}
+                      more={product.more}
+                      icon={cardIcon(product)}
+                      badge={product.badge}
+                      variant={product.variant}
+                      buyLabel={catalogBuyLabel(product)}
+                      viewLabel={catalogViewLabel(product)}
+                      maxFeatures={5}
+                    />
+                  </CarouselItem>
+                ))
+              }
+            </CarouselContent>
+          </div>
+        </div>
+      </Carousel>
+    </div>
+  </div>
+</section>
+
+<script>
+  const mountProductsCarousel = () => {
+    import('../scripts/products-carousel.ts').then(({ setupProductsCarousel }) => setupProductsCarousel());
+  };
+  const root = document.querySelector('[data-products-carousel]');
+  if (root && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          mountProductsCarousel();
+          io.disconnect();
+        }
+      },
+      { rootMargin: '120px' },
+    );
+    io.observe(root);
+  } else {
+    mountProductsCarousel();
+  }
+</script>

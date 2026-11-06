@@ -1,0 +1,258 @@
+---
+import '../styles/blog-sidebar.css';
+import Icon from './icons/Icon.astro';
+import { blogPostPath, productPath, ROUTES } from '../utils/path';
+import { checkoutPath } from '../config/checkout';
+import { t } from '../i18n';
+import type { BlogPostFull } from '../data/blog';
+import type { IconName } from './icons/types';
+import { Badge } from '@/components/starwind/badge';
+import { Button } from '@/components/starwind/button';
+
+interface Props {
+  post: BlogPostFull;
+  related: BlogPostFull[];
+  class?: string;
+}
+
+const { post, related, class: className } = Astro.props;
+
+const tocHeading =
+  {
+    'wardogs-esp-radar-tips': 'ESP article outline',
+    'eac-login-errors-guide': 'EAC errors outline',
+    'how-to-buy-wardogs-cheats-2026': 'Buy flow outline',
+    'how-to-use-wardogs-cheats': 'Safe use outline',
+    'eac-patch-day-checklist': 'Patch day outline',
+    'wardogs-cheat-menu-guide': 'Cheat menu outline',
+  }[post.slug] ?? 'In this article';
+
+const relatedHeading =
+  {
+    'wardogs-esp-radar-tips': 'Related ESP guides',
+    'eac-login-errors-guide': 'Related troubleshooting',
+    'how-to-buy-wardogs-cheats-2026': 'Related buying guides',
+    'how-to-use-wardogs-cheats': 'Related setup guides',
+    'eac-patch-day-checklist': 'Related update guides',
+    'wardogs-cheat-menu-guide': 'Related menu guides',
+  }[post.slug] ?? 'Related guides';
+
+const productsHeading =
+  {
+    'wardogs-esp-radar-tips': 'Shop ESP tiers',
+    'eac-login-errors-guide': 'Products after EAC errors',
+    'how-to-buy-wardogs-cheats-2026': 'Products to buy',
+    'how-to-use-wardogs-cheats': 'Products for setup',
+    'eac-patch-day-checklist': 'Products after patches',
+    'wardogs-cheat-menu-guide': 'Products for menu tabs',
+  }[post.slug] ?? 'Our products';
+
+const checkoutCta =
+  {
+    'wardogs-esp-radar-tips': 'ESP tier checkout',
+    'eac-login-errors-guide': 'Cheats checkout after verify',
+    'how-to-buy-wardogs-cheats-2026': 'Open 2026 cheats checkout',
+    'how-to-use-wardogs-cheats': 'Checkout for safe use build',
+    'eac-patch-day-checklist': 'Checkout after checklist',
+    'wardogs-cheat-menu-guide': 'Cheat menu tier checkout',
+  }[post.slug] ?? 'Buy War Dogs Cheats';
+
+const tocCount = post.body.filter((b) => b.type === 'h2').length;
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+const toc = post.body
+  .filter((block) => block.type === 'h2' || block.type === 'h3')
+  .map((block) => ({
+    level: block.type as 'h2' | 'h3',
+    text: 'text' in block ? block.text : '',
+    id: slugify('text' in block ? block.text : ''),
+  }));
+
+const productLinkSets: Record<string, { label: string; href: string; icon: IconName }[]> = {
+  default: [
+    { label: 'Products catalog (cheats & utilities)', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Lite / Pro / Elite tier page', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Skin Changer (Unlock All)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'HWID Spoofer recovery', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC appeals workspace', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+  'wardogs-esp-radar-tips': [
+    { label: 'Hub: cheats & utilities catalog', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Compare ESP tiers (Lite–Elite)', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Unlock All cosmetics utility', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'HWID hardware recovery tool', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC restriction appeals desk', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+  'eac-login-errors-guide': [
+    { label: 'All War Dogs products (hub)', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Cheats tier matrix', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Standalone Skin Changer route', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'Post-ban HWID Spoofer', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC ban appeal flow', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+  'how-to-buy-wardogs-cheats-2026': [
+    { label: 'Product lineup & utilities', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Checkout tiers explained', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Cosmetic unlock product', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'HWID recovery listing', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC appeals listing', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+  'how-to-use-wardogs-cheats': [
+    { label: 'Browse cheats & tools', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Portal tier features', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Unlock All (cosmetics)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'HWID Spoofer page', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC workspace page', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+  'eac-patch-day-checklist': [
+    { label: 'Full product index', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Post-patch tier checks', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Skin Changer product sheet', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'HWID tool after flags', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC case workspace', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+  'wardogs-cheat-menu-guide': [
+    { label: 'War Dogs products overview', href: ROUTES.products, icon: 'sidebarHub' },
+    { label: 'Menu-related tier picks', href: ROUTES.productsCheats, icon: 'sidebarElite' },
+    { label: 'Unlock All route', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+    { label: 'HWID recovery option', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+    { label: 'UGC appeals option', href: productPath('ugc'), icon: 'sidebarUgc' },
+  ],
+};
+
+const productLinks = productLinkSets[post.slug] ?? productLinkSets.default!;
+---
+
+<aside
+  class:list={[
+    'blog-sidebar min-w-0 lg:sticky lg:top-[calc(var(--floating-nav-clearance)+0.5rem)] lg:max-h-[calc(100vh-var(--floating-nav-clearance)-1rem)] lg:self-start lg:overflow-y-auto lg:overflow-x-hidden lg:pr-0.5',
+    className,
+  ]}
+  aria-label="Article sidebar"
+>
+  {
+    toc.length > 0 && (
+      <section class="blog-sidebar__block" aria-labelledby="blog-sidebar-toc-title">
+        <h2 id="blog-sidebar-toc-title" class="blog-sidebar__heading">
+          <Icon name="layers" size={14} class="text-primary" aria-hidden="true" />
+          <span class="blog-sidebar__heading-text">{tocHeading}</span>
+          {tocCount > 0 && (
+            <Badge variant="secondary" size="sm" class="h-5 shrink-0 rounded-full px-1.5 tabular-nums text-[10px]">
+              {tocCount}
+            </Badge>
+          )}
+        </h2>
+        <nav aria-label="Table of contents">
+          <ul class="blog-sidebar__toc-list" data-blog-toc>
+            {toc.map((item) => (
+              <li class:list={[item.level === 'h3' && 'blog-sidebar__toc-item--nested']}>
+                <button
+                  type="button"
+                  class="blog-sidebar__toc-link blog-toc-link truncate"
+                  data-toc-target={item.id}
+                  title={item.text}
+                >
+                  {item.text}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </section>
+    )
+  }
+
+  {
+    related.length > 0 && (
+      <section class="blog-sidebar__block" aria-labelledby="blog-sidebar-related-title">
+        <h2 id="blog-sidebar-related-title" class="blog-sidebar__heading">
+          <Icon name="navBlog" size={14} class="text-primary" aria-hidden="true" />
+          {relatedHeading}
+        </h2>
+        <ul class="blog-sidebar__list">
+          {related.map((item) => (
+            <li>
+              <a href={blogPostPath(item.slug)} class="blog-sidebar__link" title={item.title}>
+                <Icon name="arrowUpRight" size={13} class="shrink-0 opacity-70" aria-hidden="true" />
+                <span class="blog-sidebar__truncate">{item.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="blog-sidebar__block blog-sidebar__block--shop" aria-labelledby="blog-sidebar-products-title">
+    <h2 id="blog-sidebar-products-title" class="blog-sidebar__heading">
+      <Icon name="navProducts" size={14} class="text-primary" aria-hidden="true" />
+      {productsHeading}
+    </h2>
+    <ul class="blog-sidebar__list">
+      {productLinks.map((link) => (
+        <li>
+          <a href={link.href} class="blog-sidebar__link" title={link.label}>
+            <Icon name={link.icon} size={13} class="shrink-0 text-primary" aria-hidden="true" />
+            <span class="blog-sidebar__truncate">{link.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <Button
+      as="a"
+      href={checkoutPath('wardogs')}
+      variant="primary"
+      size="sm"
+      class="blog-sidebar__cta mt-2.5 w-full min-w-0 justify-start"
+      aria-label={t.ui.checkoutAria}
+    >
+      <span class="truncate">{checkoutCta}</span>
+      <Icon name="arrowRight" size={16} class="shrink-0" />
+    </Button>
+  </section>
+</aside>
+
+<script>
+  const tocRoot = document.querySelector('[data-blog-toc]');
+  if (tocRoot) {
+    const links = [...tocRoot.querySelectorAll<HTMLButtonElement>('[data-toc-target]')];
+    const headings = links
+      .map((link) => document.getElementById(link.getAttribute('data-toc-target')!))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        const id = link.getAttribute('data-toc-target');
+        if (!id) return;
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    if (headings.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!visible) return;
+
+          links.forEach((link) => link.classList.remove('is-active'));
+          const active = links.find(
+            (link) => link.getAttribute('data-toc-target') === visible.target.id,
+          );
+          active?.classList.add('is-active');
+        },
+        { rootMargin: '-20% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] },
+      );
+
+      headings.forEach((heading) => observer.observe(heading));
+    }
+  }
+</script>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n';
+import { resolvePageSeo } from '../config/seo';
+
+const seo = resolvePageSeo('/about/');
+import LegalPage from '../components/LegalPage.astro';
+import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
+
+const content = t.legalPages.about;
+const aboutSections = [
+  ...content.sections,
+  {
+    heading: 'What you learn here',
+    paragraphs: [
+      'Guides spell out what each War Dogs cheats tier unlocks in the portal—ESP and radar on every paid path, aimbot and recoil tools on Pro and Elite, plus Skin Changer and recovery utilities where applicable—so you can match spend to how you play ranked and Turbo.',
+      'Patch notes and EAC releases can shift module behavior overnight; we say what changed, which sliders to revisit first, and when to wait on the status banner instead of forcing a session.',
+    ],
+  },
+  {
+    heading: 'Editorial approach',
+    paragraphs: [
+      'We refresh guides when War Dogs or Easy Anti-Cheat changes behavior so tier notes stay usable. Status comes from the live banner and Discord announcements, not guesswork.',
+      'If something breaks after a patch, we prioritize fixes that reduce false positives and keep overlays readable in ranked and Turbo.',
+    ],
+  },
+  {
+    heading: 'How we document tiers',
+    paragraphs: [
+      'Each guide calls out which modules sit behind Lite, Pro and Elite so you can see scope before checkout. We do not promise future-proof behavior—EAC and game updates can restrict or change features until a compatible loader ships.',
+      'When in doubt, confirm the live status line and your portal changelog before you queue. That keeps expectations aligned with what operators can actually run today.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  jsonLd={[
+    organizationSchema(),
+    webPageSchema({
+      name: content.title,
+      description: seo.description,
+      url: '/about/',
+    }),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about/' },
+    ]),
+  ]}
+>
+  <LegalPage
+    title={content.title}
+    heading="Tiers — learn what War Dogs Cheats covers: guides & mission"
+    description={content.description}
+    breadcrumbLabel="About"
+    sections={aboutSections}
+  />
+</BaseLayout>

@@ -1,0 +1,23 @@
+{
+  "name": "War Dogs Cheats",
+  "short_name": "War Dogs Cheats",
+  "description": "War Dogs cheats with aimbot, ESP, radar and utilities for Steam PC.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0d10",
+  "theme_color": "#7f3dee",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

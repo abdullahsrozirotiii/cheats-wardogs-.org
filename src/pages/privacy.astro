@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n';
+import { resolvePageSeo } from '../config/seo';
+import LegalPage from '../components/LegalPage.astro';
+import { breadcrumbSchema, webPageSchema } from '../utils/schema';
+
+const content = t.legalPages.privacy;
+const seo = resolvePageSeo('/privacy/');
+const privacySections = [
+  ...content.sections,
+  {
+    heading: 'When you browse and contact us',
+    paragraphs: [
+      'When you browse cheatswardogs.org or open the support form, we may process IP-derived region, page paths, and the email or message text you send. Checkout pages hosted by partners collect payment details under their privacy policies.',
+    ],
+  },
+  {
+    heading: 'Retention',
+    paragraphs: [
+      'We keep analytics and support messages only as long as needed to run the site and close tickets. Payment and hosting partners apply their own schedules; see their policies for detail.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  jsonLd={[
+    webPageSchema({
+      name: content.title,
+      description: seo.description,
+      url: '/privacy/',
+    }),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Privacy Policy', path: '/privacy/' },
+    ]),
+  ]}
+>
+  <LegalPage
+    title={content.title}
+    heading="Privacy — contact data when you browse War Dogs cheats"
+    description={content.description}
+    breadcrumbLabel="Privacy Policy"
+    sections={privacySections}
+  />
+</BaseLayout>

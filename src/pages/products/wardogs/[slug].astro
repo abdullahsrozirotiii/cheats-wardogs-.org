@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAllProductSlugs, getProductPage, productHub } from '../../../data/products';
+import { pageTitle } from '../../../config/seo';
+import { getPageSeoEntry } from '../../../config/pageSeo';
+import { getProductPlans } from '../../../data/productPricing';
+import { breadcrumbSchema, productSchema } from '../../../utils/schema';
+import ProductDetail from '../../../components/ProductDetail.astro';
+
+export function getStaticPaths() {
+  return getAllProductSlugs().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const product = getProductPage(slug!);
+
+if (!product) {
+  return Astro.redirect(productHub.path);
+}
+
+const pagePath = `${productHub.path}${product.slug}/`;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: productHub.path },
+  { name: product.title, path: pagePath },
+];
+const seoEntry = getPageSeoEntry(pagePath);
+const layoutTitle = seoEntry?.title ?? pageTitle(product.title);
+const layoutDescription = seoEntry?.description ?? product.desc;
+const headingTitle =
+  product.slug === 'cheats'
+    ? 'Aimbot, ESP, vehicle markers & radar — War Dogs cheats'
+    : undefined;
+const schemaPriceUsd = Math.min(...getProductPlans(product.slug).map((p) => p.priceUsd));
+---
+
+<BaseLayout
+  title={layoutTitle}
+  description={layoutDescription}
+  jsonLd={[
+    productSchema({
+      name: product.title,
+      description: product.desc,
+      url: pagePath,
+      offerUrl: product.buyUrl,
+      priceUsd: schemaPriceUsd,
+      image: product.images[0]?.src,
+      sku: product.slug,
+    }),
+    breadcrumbSchema(breadcrumbs),
+  ]}
+>
+  <ProductDetail product={product} breadcrumbs={breadcrumbs} headingTitle={headingTitle} />
+</BaseLayout>
