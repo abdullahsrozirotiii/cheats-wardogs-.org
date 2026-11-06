@@ -52,14 +52,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       <Breadcrumbs items={breadcrumbs} />
       <h2 class="sr-only">Featured guide</h2>
       {featured && (
-        <BlogCard
-          post={featured}
-          index={0}
-          eager
-          showDate
-          layout="featured"
-          readLabel={`Open featured: ${featured.title.slice(0, 42).trim()}${featured.title.length > 42 ? '…' : ''}`}
-        />
+        <BlogCard post={featured} index={0} eager showDate layout="featured" />
       )}
     </div>
   </section>
@@ -118,12 +111,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       <h2 class="sr-only">Latest articles grid</h2>
       <div id="blog-grid" class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10">
         {gridPosts.map((post, index) => (
-          <BlogCard
-            post={post}
-            index={index}
-            showDate
-            readLabel={`Read article ${index + 1}: ${post.title.slice(0, 38).trim()}${post.title.length > 38 ? '…' : ''}`}
-          />
+          <BlogCard post={post} index={index} showDate />
         ))}
       </div>
 

@@ -313,7 +313,7 @@ export const en: Translations = {
         image: '/images/blog/wardogs-cheat-menu-guide.webp',
         desc:
           'Cheat menu walkthrough for War Dogs: AIMBOT, PLAYERS, WORLD, RADAR and CONFIG tabs before your first Steam PC match—module order and safe defaults.',
-        date: 'Aug 20, 2026',
+        date: 'Jan 9, 2026',
         readTime: '7 min read',
       },
       {
@@ -323,7 +323,7 @@ export const en: Translations = {
         image: '/images/blog/wardogs-esp-radar-tips.webp',
         desc:
           'ESP: filter boxes, loot tiers, vehicle ESP—radar and minimap tips for Steam PC Control Zone rotations, readable defaults.',
-        date: 'Aug 19, 2026',
+        date: 'Jan 24, 2026',
         readTime: '6 min read',
       },
       {
@@ -332,7 +332,7 @@ export const en: Translations = {
         slug: 'how-to-use-wardogs-cheats',
         image: '/images/blog/how-to-use-wardogs-cheats.webp',
         desc: "Status checks, loader order and conservative presets for Steam PC sessions.",
-        date: 'Aug 18, 2026',
+        date: 'Feb 7, 2026',
         readTime: '7 min read',
       },
       {
@@ -341,7 +341,7 @@ export const en: Translations = {
         slug: 'wardogs-cheats-features-guide',
         image: '/images/blog/wardogs-cheats-features-guide.webp',
         desc: "Aimbot, ESP, loot filters, radar, no recoil and stream-proof modules explained.",
-        date: 'Aug 18, 2026',
+        date: 'Feb 22, 2026',
         readTime: '11 min read',
       },
       {
@@ -350,7 +350,7 @@ export const en: Translations = {
         slug: 'wardogs-aimbot-settings-guide',
         image: '/images/blog/wardogs-aimbot-settings-guide.webp',
         desc: "FOV, smooth, prediction and silent aim tuning for tactical lobbies.",
-        date: 'Aug 17, 2026',
+        date: 'Mar 11, 2026',
         readTime: '8 min read',
       },
       {
@@ -359,7 +359,7 @@ export const en: Translations = {
         slug: 'wardogs-lite-vs-pro',
         image: '/images/blog/wardogs-lite-vs-pro.webp',
         desc: "ESP-first Lite versus Pro aimbot and trigger modules—pick the tier that matches your risk profile.",
-        date: 'Aug 16, 2026',
+        date: 'Mar 26, 2026',
         readTime: '5 min read',
       },
       {
@@ -368,7 +368,7 @@ export const en: Translations = {
         slug: 'wardogs-elite-tier-guide',
         image: '/images/blog/wardogs-elite-tier-guide.webp',
         desc: "When Elite slots, full radar and priority patches are worth the upgrade.",
-        date: 'Aug 16, 2026',
+        date: 'Apr 8, 2026',
         readTime: '7 min read',
       },
       {
@@ -377,7 +377,7 @@ export const en: Translations = {
         slug: 'wardogs-ranked-loadouts',
         image: '/images/blog/wardogs-ranked-loadouts.webp',
         desc: "Portal presets for aggressive, support and loot-focused ranked sessions.",
-        date: 'Aug 15, 2026',
+        date: 'Apr 21, 2026',
         readTime: '6 min read',
       },
       {
@@ -386,7 +386,7 @@ export const en: Translations = {
         slug: 'wardogs-esp-setup',
         image: '/images/blog/wardogs-esp-setup.webp',
         desc: "Skeleton, box, snap line and distance filters for readable wallhack overlays.",
-        date: 'Aug 15, 2026',
+        date: 'May 4, 2026',
         readTime: '5 min read',
       },
       {
@@ -395,7 +395,7 @@ export const en: Translations = {
         slug: 'wardogs-radar-guide',
         image: '/images/blog/wardogs-radar-guide.webp',
         desc: "Compass dots, arrow shapes and entity filters for rotating without tunnel vision.",
-        date: 'Aug 14, 2026',
+        date: 'May 19, 2026',
         readTime: '5 min read',
       },
       {
@@ -404,7 +404,7 @@ export const en: Translations = {
         slug: 'wardogs-skin-changer-guide',
         image: '/images/blog/wardogs-skin-changer-guide.webp',
         desc: "Local cosmetic preview and loadout favorites without touching Steam inventory.",
-        date: 'Aug 14, 2026',
+        date: 'Jun 2, 2026',
         readTime: '6 min read',
       },
       {
@@ -414,7 +414,7 @@ export const en: Translations = {
         image: '/images/blog/eac-patch-day-checklist.webp',
         desc:
           'War Dogs cheats patch day checklist: after EAC or game updates confirm status, refresh the loader, test ESP in a private lobby, then queue ranked on Steam PC.',
-        date: 'Aug 13, 2026',
+        date: 'Jun 17, 2026',
         readTime: '5 min read',
       },
       {
@@ -423,7 +423,7 @@ export const en: Translations = {
         slug: 'wardogs-hwid-spoofer-after-ban',
         image: '/images/blog/wardogs-hwid-spoofer-after-ban.webp',
         desc: "When to spoof, when to reset, and pairing with [UGC](/products/wardogs/ugc/).",
-        date: 'Aug 13, 2026',
+        date: 'Jul 1, 2026',
         readTime: '7 min read',
       },
       {
@@ -433,7 +433,7 @@ export const en: Translations = {
         image: '/images/blog/how-to-buy-wardogs-cheats-2026.webp',
         desc:
           'How to buy war dogs cheats in 2026: one checkout unlocks the operator portal on Steam PC, pick Lite Pro or Elite, download the loader, verify status, then queue ranked.',
-        date: 'Aug 12, 2026',
+        date: 'Jul 14, 2026',
         readTime: '5 min read',
       },
       {
@@ -442,7 +442,7 @@ export const en: Translations = {
         slug: 'wardogs-aimbot-presets',
         image: '/images/blog/wardogs-aimbot-presets.webp',
         desc: "Starter FOV and smooth curves for rifles, SMGs and DMR roles.",
-        date: 'Aug 12, 2026',
+        date: 'Jul 28, 2026',
         readTime: '6 min read',
       },
       {
@@ -452,7 +452,7 @@ export const en: Translations = {
         image: '/images/blog/eac-login-errors-guide.webp',
         desc:
           'eac login and verify errors on War Dogs: fix integrity checks and driver conflicts, verify the loader, and know when to open a support ticket on Steam PC.',
-        date: 'Aug 11, 2026',
+        date: 'Aug 6, 2026',
         readTime: '6 min read',
       },
       {
@@ -461,7 +461,7 @@ export const en: Translations = {
         slug: 'wardogs-external-cheat-guide',
         image: '/images/blog/wardogs-external-cheat-guide.webp',
         desc: "Why external loaders matter on EAC-protected Steam builds.",
-        date: 'Aug 11, 2026',
+        date: 'Aug 19, 2026',
         readTime: '7 min read',
       },
       {
@@ -470,7 +470,7 @@ export const en: Translations = {
         slug: 'wardogs-stream-proof-setup',
         image: '/images/blog/wardogs-stream-proof-setup.webp',
         desc: "Hide ESP and radar from OBS while keeping modules on your monitor.",
-        date: 'Aug 10, 2026',
+        date: 'Sep 3, 2026',
         readTime: '5 min read',
       }
     ],

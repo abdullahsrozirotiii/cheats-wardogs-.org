@@ -69,12 +69,11 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  white-space: normal;
-  text-wrap: balance;
-  overflow-wrap: anywhere;
-  line-height: 1.35;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .blog-featured {

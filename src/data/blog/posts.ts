@@ -9,7 +9,7 @@ export const blogPosts: BlogPostFull[] = [
     image: "/images/blog/wardogs-cheat-menu-guide.webp",
     desc:
       "Cheat menu on Steam PC: AIMBOT, PLAYERS, WORLD, RADAR and CONFIG before your first match—module order, conservative defaults, and how each cheat tab maps.",
-    date: "Aug 12, 2026",
+    date: "Jan 9, 2026",
     readTime: "7 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -71,7 +71,7 @@ export const blogPosts: BlogPostFull[] = [
     image: "/images/blog/wardogs-esp-radar-tips.webp",
     desc:
       "Esp on Steam PC: filter boxes, loot and vehicle overlays, radar and minimap tips for Control Zone rotations—readable defaults and when War Dogs cheats.",
-    date: "Aug 12, 2026",
+    date: "Jan 24, 2026",
     readTime: "6 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -133,7 +133,7 @@ export const blogPosts: BlogPostFull[] = [
     image: "/images/blog/how-to-use-wardogs-cheats.webp",
     desc:
       "Use War Dogs cheats safely on Steam PC: status checks, loader order, conservative presets, and a calm path into public matchmaking—covering portal sync.",
-    date: "Aug 12, 2026",
+    date: "Feb 7, 2026",
     readTime: "7 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -193,7 +193,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-cheats-features-guide",
     image: "/images/blog/wardogs-cheats-features-guide.webp",
     desc: "War Dogs cheats explained: ESP, radar, aimbot tiers and Control Zone awareness for Steam PC.",
-    date: "Aug 12, 2026",
+    date: "Feb 22, 2026",
     readTime: "11 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -268,7 +268,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-aimbot-settings-guide",
     image: "/images/blog/wardogs-aimbot-settings-guide.webp",
     desc: "War Dogs aimbot settings: FOV, smoothing and recoil for Pro and Elite cheats.",
-    date: "Aug 12, 2026",
+    date: "Mar 11, 2026",
     readTime: "8 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -335,7 +335,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-lite-vs-pro",
     image: "/images/blog/wardogs-lite-vs-pro.webp",
     desc: "Compare War Dogs cheats Lite vs Pro: ESP-only versus aimbot and recoil for Steam PC.",
-    date: "Aug 12, 2026",
+    date: "Mar 26, 2026",
     readTime: "5 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -410,7 +410,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-elite-tier-guide",
     image: "/images/blog/wardogs-elite-tier-guide.webp",
     desc: "When Elite slots, full radar and priority patches are worth the upgrade.",
-    date: "Aug 12, 2026",
+    date: "Apr 8, 2026",
     readTime: "7 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -469,7 +469,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-ranked-loadouts",
     image: "/images/blog/wardogs-ranked-loadouts.webp",
     desc: "Portal presets for aggressive, support and loot-focused ranked sessions.",
-    date: "Aug 12, 2026",
+    date: "Apr 21, 2026",
     readTime: "6 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -528,7 +528,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-esp-setup",
     image: "/images/blog/wardogs-esp-setup.webp",
     desc: "War Dogs wallhack setup: readable ESP filters for Control Zone and extraction fights.",
-    date: "Aug 12, 2026",
+    date: "May 4, 2026",
     readTime: "5 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -595,7 +595,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-radar-guide",
     image: "/images/blog/wardogs-radar-guide.webp",
     desc: "Compass dots, arrow shapes and entity filters for rotating without tunnel vision.",
-    date: "Aug 12, 2026",
+    date: "May 19, 2026",
     readTime: "5 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -654,7 +654,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-skin-changer-guide",
     image: "/images/blog/wardogs-skin-changer-guide.webp",
     desc: "Local cosmetic preview and loadout favorites without touching Steam inventory.",
-    date: "Aug 12, 2026",
+    date: "Jun 2, 2026",
     readTime: "6 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -715,7 +715,7 @@ export const blogPosts: BlogPostFull[] = [
     image: "/images/blog/eac-patch-day-checklist.webp",
     desc:
       "Patch day checklist after EAC or War Dogs updates: confirm cheatswardogs.org status, refresh the loader, run a private ESP test, then queue ranked—safe.",
-    date: "Aug 12, 2026",
+    date: "Jun 17, 2026",
     readTime: "5 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -783,7 +783,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-hwid-spoofer-after-ban",
     image: "/images/blog/wardogs-hwid-spoofer-after-ban.webp",
     desc: "When to spoof, when to reset, and pairing with [UGC](/products/wardogs/ugc/).",
-    date: "Aug 12, 2026",
+    date: "Jul 1, 2026",
     readTime: "7 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -844,7 +844,7 @@ export const blogPosts: BlogPostFull[] = [
     image: "/images/blog/how-to-buy-wardogs-cheats-2026.webp",
     desc:
       "How to buy war dogs cheats in 2026 on Steam PC: one partner checkout opens the operator portal—pick Lite, Pro or Elite, fetch the loader, confirm green.",
-    date: "Aug 12, 2026",
+    date: "Jul 14, 2026",
     readTime: "5 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -912,7 +912,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-aimbot-presets",
     image: "/images/blog/wardogs-aimbot-presets.webp",
     desc: "Starter FOV and smooth curves for rifles, SMGs and DMR roles.",
-    date: "Aug 12, 2026",
+    date: "Jul 28, 2026",
     readTime: "6 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -973,7 +973,7 @@ export const blogPosts: BlogPostFull[] = [
     image: "/images/blog/eac-login-errors-guide.webp",
     desc:
       "eac login and verify errors on Steam PC: fix integrity failures and driver clashes, re-verify the War Dogs loader after patches, reset overlays.",
-    date: "Aug 12, 2026",
+    date: "Aug 6, 2026",
     readTime: "6 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -1033,7 +1033,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-external-cheat-guide",
     image: "/images/blog/wardogs-external-cheat-guide.webp",
     desc: "Why external loaders matter on EAC-protected Steam builds.",
-    date: "Aug 12, 2026",
+    date: "Aug 19, 2026",
     readTime: "7 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
@@ -1092,7 +1092,7 @@ export const blogPosts: BlogPostFull[] = [
     slug: "wardogs-stream-proof-setup",
     image: "/images/blog/wardogs-stream-proof-setup.webp",
     desc: "Hide ESP and radar from OBS while keeping modules on your monitor.",
-    date: "Aug 12, 2026",
+    date: "Sep 3, 2026",
     readTime: "5 min read",
     author: 'War Dogs Cheats Editorial',
     body: [
